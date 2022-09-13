@@ -22,7 +22,8 @@ public class MilesPerGallonRevisited {
         boolean inputValid = false;
         String userInput = "";
         do {
-            System.out.print("Select (n)New trip, (d)Display total MPG, (q)Quit: ");
+            System.out.print("Select (n)New trip, (d)Display total MPG, "
+                    + "(q)Quit: ");
             Scanner computerKeyboardInput = new Scanner(System.in);
             userInput = computerKeyboardInput.nextLine();
             if ("n".equals(userInput) || "d".equals(userInput)
