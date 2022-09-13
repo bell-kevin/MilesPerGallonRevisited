@@ -20,7 +20,7 @@ public class MilesPerGallonRevisited {
         } // end for-each loop
         boolean inputValid = false;
         String userInput = "";
-        while (!userInput.equalsIgnoreCase("q")) {
+        do {
             System.out.print("Select (n)New trip, (d)Display total MPG, "
                     + "(q)Quit: ");
             Scanner computerKeyboardInput = new Scanner(System.in);
@@ -32,13 +32,13 @@ public class MilesPerGallonRevisited {
                     System.out.println("No trips yet.");
                 } else {
                     MPG.displayTotalMPG();
-                }
+                } // end if/else condition
             } else if ("q".equals(userInput)) {
                 break;
             } else {
                 System.out.println("bad input, try again");
             } // end if/else statement
-        } // end while loop
+        } while (!userInput.equalsIgnoreCase("q"));// end while loop
     } // end main method
 //******************************************************************************
 
@@ -47,9 +47,11 @@ public class MilesPerGallonRevisited {
         String userInput = "";
         try {
             Scanner computerKeyboardInput = new Scanner(System.in);
-            System.out.print("Enter miles: ");
-            userInput = computerKeyboardInput.next();
-            miles = Double.parseDouble(userInput);
+            do {
+                System.out.print("Enter miles: ");
+                userInput = computerKeyboardInput.next();
+                miles = Double.parseDouble(userInput);
+            } while (miles < 0); // end do/while loop
             System.out.print("Enter gallons: ");
             userInput = computerKeyboardInput.next();
             gallons = Double.parseDouble(userInput);
