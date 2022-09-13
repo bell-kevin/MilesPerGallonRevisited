@@ -10,7 +10,7 @@ public class MPG {
 
     private static double totalMiles, totalGallons, totalMPG; //class variables
     private static int numTrips; //class variable   
-    private double miles, gallons, MPG; //instance variables
+    private static double miles, gallons, MPG; //instance variables
 
 //*****************************************************************************
     public MPG(double miles, double gallons) {
@@ -23,8 +23,9 @@ public class MPG {
     } //end MPG constructor
 
 //*****************************************************************************
-    public void displayCurrentMPG() {
-        System.out.printf("This trip = %-6.2f MPG\n", this.MPG);
+    public static void displayCurrentMPG() {
+        MPG = miles / gallons;
+        System.out.printf("This trip = %-6.2f MPG\n", MPG);
     } //end displayCurrentMPG
 
 //*****************************************************************************
