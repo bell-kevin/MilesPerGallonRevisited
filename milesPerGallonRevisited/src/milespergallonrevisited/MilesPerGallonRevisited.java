@@ -14,26 +14,21 @@ public class MilesPerGallonRevisited {
     public static void main(String[] args) {
         System.out.println("Ch 15 MPG Calculator by Kevin Bell \n");
         ArrayList<MPG> milesPerGallon = new ArrayList<>();
-        //milesPerGallon.add(new MPG(55.52, 21.30));
-        for (MPG milesPG : milesPerGallon) {
-            MPG.displayTotalMPG();
-        } // end for-each loop
-        boolean inputValid = false;
-        String userInput = "";
+        String userInput;
         do {
             System.out.print("Select (n)New trip, (d)Display total MPG, "
                     + "(q)Quit: ");
             Scanner computerKeyboardInput = new Scanner(System.in);
             userInput = computerKeyboardInput.nextLine();
-            if ("n".equals(userInput)) {
+            if ("n".equalsIgnoreCase(userInput)) {
                 milesPerGallon.add(getNewTrip());
-            } else if ("d".equals(userInput)) {
+            } else if ("d".equalsIgnoreCase(userInput)) {
                 if (milesPerGallon.isEmpty()) {
                     System.out.println("No trips yet.");
                 } else {
                     MPG.displayTotalMPG();
                 } // end if/else condition
-            } else if ("q".equals(userInput)) {
+            } else if ("q".equalsIgnoreCase(userInput)) {
                 break;
             } else {
                 System.out.println("bad input, try again");
@@ -44,25 +39,31 @@ public class MilesPerGallonRevisited {
 
     static MPG getNewTrip() {
         double miles = 0, gallons = 0;
-        String userInput = "";
+        String userInput;
         try {
             Scanner computerKeyboardInput = new Scanner(System.in);
             do {
                 System.out.print("Enter miles: ");
                 userInput = computerKeyboardInput.next();
                 miles = Double.parseDouble(userInput);
-            } while (miles < 0); // end do/while loop
-            System.out.print("Enter gallons: ");
-            userInput = computerKeyboardInput.next();
-            gallons = Double.parseDouble(userInput);
+            } while (miles < 0.0000000001); // end do/while loop
+            do {
+                System.out.print("Enter gallons: ");
+                userInput = computerKeyboardInput.next();
+                gallons = Double.parseDouble(userInput);
+            } while (gallons < 0.00000000000001); // end do/while loop
             if (gallons == 0 && miles == 0) {
-                System.out.println("There are no trips yet");
+                System.out.println("There are no trips yet. Go drive first.");
             } // end if condition
         } catch (NumberFormatException nfe) {
-            System.out.println("Bad input, try again");
+            System.out.println("Bad input, try again. Check that input.");
         } // end try/catch exception handling
         MPG currentMpg = new MPG(miles, gallons);
-        currentMpg.displayCurrentMPG();
+        if (miles < 1 || miles > 999999999) {
+            System.out.print("");
+        } else {
+            currentMpg.displayCurrentMPG();
+        } // end if condition
         return currentMpg;
-    } // end getNewTrip helper method
+    } // end getNewTrip helper and array list loader method
 } // end MilesPerGallonRevisited class
