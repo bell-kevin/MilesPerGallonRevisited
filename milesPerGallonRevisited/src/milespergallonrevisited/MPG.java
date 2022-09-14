@@ -20,6 +20,7 @@ public class MPG {
         totalMiles += miles;
         totalGallons += gallons;
         numTrips++;
+        displayCurrentMPG();
     } //end MPG constructor
 
 //*****************************************************************************
