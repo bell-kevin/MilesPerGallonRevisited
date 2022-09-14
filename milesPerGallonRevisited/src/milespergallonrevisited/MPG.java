@@ -22,17 +22,27 @@ public class MPG {
         numTrips++;
         displayCurrentMPG();
     } //end MPG constructor
-
 //*****************************************************************************
+
+    public static double getTotalMPG(double totalMPG) {
+        return totalMPG;
+    } // end getTotalMPG method
+    //*****************************************************************************
+
+    public static double getCurrentMPG(double MPG) {
+        return MPG;
+    } // end getTotalMPG method
+//*****************************************************************************
+
     public void displayCurrentMPG() {
         MPG = miles / gallons;
         System.out.printf("This trip = %-6.9f MPG\n", MPG);
-    } //end displayCurrentMPG
+    } //end displayCurrentMPG method
 
 //*****************************************************************************
     public static void displayTotalMPG() {
         totalMPG = totalMiles / totalGallons;
-        System.out.printf("For %d trips, total MPG = %-6.9f\n", numTrips,
+        System.out.printf("For %d trips, total MPG = %-6.2f\n", numTrips,
                 totalMPG);
-    } //end displayTotalMPG  
+    } //end displayTotalMPG method
 } //end class MPG
