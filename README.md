@@ -8,23 +8,15 @@ In Ch 7 in the previous course, you created a project for calculating miles per 
 
 In this project, use an Array List of the MPG objects. Ask the user for the input of miles and gallons, and validate the input, handling any exceptions that might be thrown. Do not accept a value of zero or a negative number for either input. When the data is valid, perform the various calculations and display the MPG for that specific trip. Ask the user if they want to add another trip or see the total MPG for all trips or quit. If the user asks to see the total MPG, display it, then repeat the prompt about adding new trips, seeing total MPG, or quitting.
 
-Here is a sample session, showing errors as well as good data.
-
-Ch 15 MPG revisited
-
 In the driver class, use anonymous objects for each trip to add to the Array List.
 
-Because there are class variables and a class method for the cumulative or total miles per gallon, you can access them using any of the elements in the Array List. It might be logical to use element 0 to access that method when the user requests the total MPG display. There is one concern – could the user ask for the total MPG display before any objects have been instantiated and added to the Array list? While it’s not probable, it is possible, and in that case, there would be an exception thrown about the index being out of bounds. You need to include a try-catch for that. There is another option – create one instantiated MPG object in the driver class to be able to access that class method. Add a zero-parameter constructor for an MPG object so you can instantiate this “totals” object. Then you can call the class method from this object without any concern about whether objects have been instantiated and added to the Array List. You may choose either of these algorithms to make sure there is no exception thrown for index out of bounds. Test it by starting the project, then asking to display the total MPG. Since there are no trips, there is no total to display -- make sure it is handled. Here is an example:
+Because there are class variables and a class method for the cumulative or total miles per gallon, you can access them using any of the elements in the Array List. It might be logical to use element 0 to access that method when the user requests the total MPG display. There is one concern – could the user ask for the total MPG display before any objects have been instantiated and added to the Array list? While it’s not probable, it is possible, and in that case, there would be an exception thrown about the index being out of bounds. You need to include a try-catch for that. There is another option – create one instantiated MPG object in the driver class to be able to access that class method. Add a zero-parameter constructor for an MPG object so you can instantiate this “totals” object. Then you can call the class method from this object without any concern about whether objects have been instantiated and added to the Array List. You may choose either of these algorithms to make sure there is no exception thrown for index out of bounds. Test it by starting the project, then asking to display the total MPG. Since there are no trips, there is no total to display -- make sure it is handled.
 
-Ch 15 MPG no trips
+![good output](https://github.com/bell-kevin/MilesPerGallonRevisited/blob/main/goodOutput.PNG)
 
 Take screenshots of the execution that matches the sample session, and then run the program again with different values and errors, and take screenshots of the results. Run the program again and ask for the total as the first entry, and take a screenshot.
 
- 
-
 Submission: the specified screenshots (of execution of the code and successful unit tests) and the root folder for the project
-
- 
 
 Pay careful attention to the rubric for this assignment.
 
