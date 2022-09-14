@@ -34,6 +34,7 @@ public class MilesPerGallonRevisited {
                         gallons = Double.parseDouble(userInput);
                     } while (gallons <= 0); // end do/while loop
                     MPG currentMpg = new MPG(miles, gallons);
+                    // add anonymous objects to array list
                     milesPerGallon.add(currentMpg);
                 } catch (NumberFormatException e) {
                     System.out.println("Bad input, try again. Check input");
