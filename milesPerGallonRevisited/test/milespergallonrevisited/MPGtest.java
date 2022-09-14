@@ -21,30 +21,46 @@ public class MPGtest {
     @Parameterized.Parameter(0)
     public int miles;
     //expected result
+
     @Parameterized.Parameter(1)
-    public double result;
+    public double gallons;
+
+    @Parameterized.Parameter(2)
+    public double totalMPG;
+
+    @Parameterized.Parameter(3)
+    public double currentMPG;
 
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][]{
-            {9, 52.02},
-            {16, 104.04},
-            {5, 156.06},
-            {14, 208.08},
-            {1, 260.1},
-            {2, 312.12},
-            {3, 364.14},
-            {4, 416.159999},
-            {6, 468.1799999}
+            {100, 10, 10, 10},
+            {200, 5, 40, 40},
+            {300, 5, 60, 60},
+            {400, 5, 80, 80},
+            {500, 5, 100, 100},
+            {600, 5, 120, 120},
+            {700, 5, 140, 140},
+            {800, 5, 160, 160},
+            {900, 5, 180, 180},
+            {600, 17.143, 35, 35}
         };
         return Arrays.asList(data);
     }
 
     @Test
     public void testGetTotalMiles() {
-        MilesPerGallon gallons;
-        gallons = new MilesPerGallon(52.02, 53.12);
-        double actual = gallons.getTotalMiles();
+        MPG Mpg = new MPG(miles, gallons);
+        double actual = MPG.getTotalMPG(totalMPG);
+        double result = totalMPG;
         assertEquals(result, actual, 0.01);
-    } // end test method
+    } // end testGetTotalMiles test method
+
+    @Test
+    public void testGetCurrentMiles() {
+        MPG Mpg = new MPG(miles, gallons);
+        double actual = MPG.getCurrentMPG(miles / gallons);
+        double result = miles / gallons;
+        assertEquals(result, actual, 0.01);
+    } // end testGetTotalMiles test method  
 } //end class MPGTest
