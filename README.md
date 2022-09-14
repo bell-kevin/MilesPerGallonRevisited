@@ -2,6 +2,8 @@
 
 Write unit tests to verify the calculations in the class for Miles Per Gallon in this project. Include at least 5 data sets. Take screenshots of the successful unit tests.
 
+!unit test output](https://github.com/bell-kevin/MilesPerGallonRevisited/blob/main/all%20test%20units%20passed.PNG)
+
 In Ch 7 in the previous course, you created a project for calculating miles per gallon for a single trip and for cumulative trips. In this project, you will use the same class named MPG. It has instance variables for miles and gallons for a trip, total miles and total gallons for the cumulative calculation, and methods to instantiate a trip, display current MPG, and display total MPG. (Hint: after creating a new project here, create the new class, and copy all of the code from the Ch 7 MPG class into the Ch 15 MPG class.)
 
 In this project, use an Array List of the MPG objects. Ask the user for the input of miles and gallons, and validate the input, handling any exceptions that might be thrown. Do not accept a value of zero or a negative number for either input. When the data is valid, perform the various calculations and display the MPG for that specific trip. Ask the user if they want to add another trip or see the total MPG for all trips or quit. If the user asks to see the total MPG, display it, then repeat the prompt about adding new trips, seeing total MPG, or quitting.
